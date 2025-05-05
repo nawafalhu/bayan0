@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bayanproject
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn BayanProject.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: BayanProject.settings
+      - key: PYTHON_VERSION
+        value: 3.11
